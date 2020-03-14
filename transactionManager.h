@@ -10,7 +10,8 @@
 #define transactionManager_h
 
 #include <stdio.h>
-
+#include <string>
+#include <algorithm>
 #include "inventoryManager.h"
 #include  "customerManager.h"
 #include "transactionFactory.h"
