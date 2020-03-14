@@ -38,6 +38,7 @@ void  TransactionManager::readCommands(ifstream& command, CustomerManager& custo
     while (!command.eof())             // do until end of file has been reached
     {
         getline(command, commandLine);    // get single command
+        commandLine.erase(remove(commandLine.begin(), commandLine.end(), '\r'), commandLine.end()); //remove all /r
         
         TransactionFactory doTransaction(commandLine, customers, inventory); // send it to transaction factory
         string addToErrors = doTransaction.getErrors();
