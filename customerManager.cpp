@@ -1,15 +1,7 @@
-//
-//  store.cpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/9/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
-
 #include "customerManager.h"
 
-//-------------------------- Default Constructor ----------------------------
-//
+//-------------------------- Constructor ----------------------------
+// Description: This is the default constructor for the class
 //---------------------------------------------------------------------------
 CustomerManager::CustomerManager()
 {
@@ -17,7 +9,7 @@ CustomerManager::CustomerManager()
 }
 
 //----------------------------- Destructor ----------------------------------
-//
+// Description: This is the destructor for the class
 //---------------------------------------------------------------------------
 CustomerManager::~CustomerManager()
 {
@@ -25,14 +17,12 @@ CustomerManager::~CustomerManager()
 }
 
 //--------------------------- processCustomers -------------------------------
-// --Function: processCustomers
-// --Param:
-//      --customerFile is a valid file of customer data where each
-//        line is in the format: int ID, string LastName, string firstName
-//
-// --Post-condition:
-//      --Creates customer objects with the specified data and adds them to
-//        the customer Database (i.e the HashTable : tableOfCustomers)
+// Description: This function takes in a valid file of customer data where each
+//              line is in the format: int ID, string LastName, string firstName
+//              and add that data into the customer database.
+// Pre-condition: The file must be valid.
+// Post-condition: Creates customer objects with the specified data and adds them to
+//                 the customer database (i.e the HashTable : tableOfCustomers)
 //----------------------------------------------------------------------------
 void CustomerManager::processCustomers(ifstream& file)
 {
@@ -45,18 +35,14 @@ void CustomerManager::processCustomers(ifstream& file)
         
         //Then add to storage:
         customers.addCustomer(new Customer(fileID, lastName, firstName));
-        
     }
     
 }
 
 //------------------------------ getCustomer ----------------------------------
-// --Function: getCustomer retreives the customer from the customerStorage
-//               hash table
-// --Param:
-//      --int is the ID of the customer wished to be retreived
-// --Post-condition:
-//      --Returns a pointer to the customer in customerStorage
+// Description: This function retreives a customer from the customer database
+//              given a unique ID.
+// Post-condition: Returns a pointer to the customer object in the hash table
 //----------------------------------------------------------------------------
 Customer* CustomerManager::getCustomer(int id)
 {
