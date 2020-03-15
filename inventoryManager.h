@@ -1,10 +1,3 @@
-//
-//  nodedata.hpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #ifndef inventoryManager_h
 #define inventoryManager_h
@@ -17,34 +10,26 @@
 #include "bintree.h"
 #include "movieFactory.h"
 //--------------------------  class InventoryManager ------------------------
-// Purpose: This class reads the given file then sort and insert
+// Purpose: This class reads in a given file then sort and insert
 //      movies to a specific BSTree (Drama, Classisc, Comedy).
-//      It also displays all BSTrees and keep track of invalid movies.
-//
-// Implementation and assumptions:
-//   -- Implement as manager class
-//   -- Implement with using factory pattern:
-//      MovieFactory class.
-//   -- Implement with following futures:
-//      proccessInvetory, retriveMovie, displayAll, classicRetrieve,
-//        addError, displayErrors
+//      It also displays all BSTrees and keep track of invalid movies inputs.
 //---------------------------------------------------------------------------
 
 class InventoryManager
 {
 public:
     
-    void processInventory(ifstream&);                 // proccess invetory
-    Movie* retrieveMovie(const string&);
-    void display()const;
-    Movie* retrieveClassicMovie(Movie*);
+    void processInventory(ifstream&);                 // reads in the file, then sort and insert
+    Movie* retrieveMovie(const string&);              // retrieve a movie
+    void display()const;                              // display inventory
+    Movie* retrieveClassicMovie(Movie*);              // a seperate method to retrieve classic movies
     
 private:
     
-    void addError(const string&);                             // add errors from all invalid movie
-    void displayErrors() const;                        // displays all invalid movies that has been detected
+    void addError(const string&);                      // add all invalid movie inputs
+    void displayErrors() const;                        // displays all invalid movie inputs that has been detected
     
-    vector<string> allErrors;                     // error collector
+    vector<string> allErrors;                          // store all errors
     BinTree dramaBST;                                  // BSTrees for drama movies
     BinTree classicsBST;                               // BSTrees for classic movies
     BinTree comedyBST;                                 // BSTrees for comedy movies
