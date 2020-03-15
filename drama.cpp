@@ -43,7 +43,7 @@ string Drama::createMovie() const
     return movieInfo.str();
 }
 
-//----------------------------- createCustomerHistory   ----------------------
+//----------------------------- createHistory   ----------------------
 // Description: This function creates a formated string with all the movie info for customer history.
 // Post-condition: a formated string with all the movie info for customer history.
 //----------------------------------------------------------------------------
