@@ -1,14 +1,7 @@
-//
-//  movie.cpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #include "movie.h"
 //----------------------------- Construstor ----------------------------------
-//
+// Description: This is the default constructor which creates an empty movie object
 //----------------------------------------------------------------------------
 Movie::Movie()
 {
@@ -20,10 +13,10 @@ Movie::Movie()
 }
 
 
-//------------------------ parseNloadString ----------------------------------
-// --Helper method for constractor.
-// --Parses the string into a smaller pieces. From these pieces
-//   assign inforamtion to a current movie.
+//------------------------ parseAndloadString ----------------------------------
+// Description: This is the helper function for constructor. It parses the string 
+//              into a smaller pieces. From these pieces, it assigns info to the movie object.
+// Post-condition: Movie object is updated with info.
 //----------------------------------------------------------------------------
 void Movie::parseAndLoadString(const string& movie)
 {
@@ -44,7 +37,7 @@ void Movie::parseAndLoadString(const string& movie)
 }
 
 //------------------------ increaseStock --------------------------------------
-//  --Increase stock of current movievby one
+// Description: This function increase the stock of current movie by one
 //-----------------------------------------------------------------------------
 bool Movie::increaseStock()
 {
@@ -53,7 +46,8 @@ bool Movie::increaseStock()
 }
 
 //------------------------ getStock   ------------------------------------------
-// --returns current stock of the movie
+// Description: This function returns current stock of the movie.
+// Post-condition: The stock of the current Movie object.
 //------------------------------------------------------------------------------
 int Movie::getStock()
 {
@@ -61,9 +55,9 @@ int Movie::getStock()
 }
 
 //-------------------------- decreaseStock  ------------------------------------
-// --Decreases current stock of the movie.
-// --If stock is less than or equal zero, stock will be the same and return false,
-//     else will return true after decreasing stock by one
+// Description: This function decreases current stock of the movie.
+// Post-condition: If stock is less than or equal zero, stock will be the same and return false,
+//                 Else return true after decreasing stock by one.
 //------------------------------------------------------------------------------
 bool Movie::decreaseStock()
 {
