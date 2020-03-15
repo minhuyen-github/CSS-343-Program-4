@@ -1,28 +1,10 @@
-//
-//  drama.cpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #include "drama.h"
 #include <sstream>
 
-//---------------------------- class Drama ----------------------------------
-// Purpose:
-//   -- Child class of Movie. Dramma Movie sorts
-//      by director and title.
-//
-// Implementation and assumptions:
-//   -- Implement as a child class of Movie
-//   -- Implement with following futures:
-//      createMovieInfo, createCustomerHistory, ==, !=, >, <
-//---------------------------------------------------------------------------
-
-
 //-------------------------- Constructor --------------------------------------
-// --Uses helper function parseNLoadString
+// Description: This is the constructor which will call parseAndLoadString method
+//              to create a drama movie object.
 //-----------------------------------------------------------------------------
 Drama::Drama(const string& movieInfo)
 {
@@ -30,7 +12,7 @@ Drama::Drama(const string& movieInfo)
 }
 
 //---------------------------Constructor -------------------------------------
-//
+// Description: This is the constructor which will set the movie title and director
 //----------------------------------------------------------------------------
 Drama::Drama(const string& releaseTitle, const string& releaseDir)
 {
@@ -39,15 +21,17 @@ Drama::Drama(const string& releaseTitle, const string& releaseDir)
 }
 
 //------------------------- Destructor ----------------------------------------
-//
+// Description: This is the destructor.
 //-----------------------------------------------------------------------------
 Drama::~Drama()
 {
     //empty on purpose
 }
 
-//----------------------------- createMovieInfo ------------------------------
-// --Creates a formated string with all the movie info for output to console
+//----------------------------- createMovie ------------------------------
+// Description: This function creates a formated string with all the movie 
+//              info console.
+// Post-condition: a string represent the drama movie info
 //----------------------------------------------------------------------------
 string Drama::createMovie() const
 {
@@ -60,7 +44,8 @@ string Drama::createMovie() const
 }
 
 //----------------------------- createCustomerHistory   ----------------------
-// --Creates a formated string with all the movie info for customer history
+// Description: This function creates a formated string with all the movie info for customer history.
+// Post-condition: a formated string with all the movie info for customer history.
 //----------------------------------------------------------------------------
 string Drama::createHistory() const
 {
@@ -73,9 +58,9 @@ string Drama::createHistory() const
 }
 
 //------------------------ operator== ----------------------------------------
-// --Compares current object Movie with other object Movie.
-// --Returns true if title and director are the same
-//   else returns false.
+// Description: This function compares current object Movie with other object Movie.
+// Post-condition: Returns true if title and director are the same
+//                 Else returns false.
 //----------------------------------------------------------------------------
 bool Drama::operator==(const Movie* movie) const
 {
@@ -85,9 +70,9 @@ bool Drama::operator==(const Movie* movie) const
 }
 
 //------------------------ operator!= ----------------------------------------
-// --Compares current object Movie with other object Movie.
-// --Returns true if title or director are not the same
-//   else returns false.
+// Description: This function compares current object Movie with other object Movie.
+// Post-condition: Returns true if title or director are not the same
+//                 Else returns false.
 //----------------------------------------------------------------------------
 bool Drama::operator!=(const Movie * movie) const
 {
@@ -95,10 +80,10 @@ bool Drama::operator!=(const Movie * movie) const
 }
 
 //------------------------ operator> -----------------------------------------
-// --Compares current object Movie with other object Movie.
-// --Returns true if director is greater.
-// --If director is the same, then checks title and returns true if greater.
-// --Else returns false.
+// Description: This function compares current object Movie with other object Movie.
+// Post-condition: Returns true if director is greater.
+//                 If director is the same, then checks title and returns true if greater.
+//                 Else returns false.
 //----------------------------------------------------------------------------
 bool Drama::operator>(const Movie * movie) const
 {
@@ -108,9 +93,9 @@ bool Drama::operator>(const Movie * movie) const
 }
 
 //------------------------ operator< -----------------------------------------
-// --Compares current object Movie with other object Movie.
-// --Returns true if (this) does not equal rhs and is not greater than rhs.
-// --Else it returns false.
+// Description: This function compares current object Movie with other object Movie.
+// Post-condition: Returns true if (this) does not equal rhs and is not greater than rhs.
+//                 Else it returns false.
 //----------------------------------------------------------------------------
 bool Drama::operator<(const Movie * movie) const
 {
