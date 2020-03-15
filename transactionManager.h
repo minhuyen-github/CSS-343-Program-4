@@ -1,11 +1,3 @@
-//
-//  transactionManager.hpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/13/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
-
 #ifndef transactionManager_h
 #define transactionManager_h
 
@@ -17,17 +9,16 @@
 #include "transactionFactory.h"
 
 //------------------------- class TransactionManager ------------------------
-// Purpose:
-//     -- Transaction Manager Processes the transaction file
+// Purpose: This class processes the movie and customer file
 //---------------------------------------------------------------------------
 class TransactionManager
 {
 public:
-    TransactionManager();
-    virtual ~TransactionManager();
-    void readCommands(ifstream&, CustomerManager&, InventoryManager&);    // read commands
+    TransactionManager();                           // constructor
+    virtual ~TransactionManager();                  //destructor
+    void readCommands(ifstream&, CustomerManager&, InventoryManager&); // read commands from movie and customer file
     
 private:
-    vector<string> error;
+    vector<string> error;                           //store all transaction errors
 };
 #endif /* transactionManager_h */
