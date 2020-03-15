@@ -1,18 +1,10 @@
-//
-//  hashTable.cpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #include "hashTable.h"
 
 //------------------------------- Default Constructor ------------------------
-// --Default Constructor
-// --Param: N/A
-// --Post-condition:
-//      --Fills the table with nullptrs
+// Description: This is the default constructor which will create an empty hash
+//              table.
+// Post-condition: The hash table is filled with nullptrs
 //----------------------------------------------------------------------------
 HashTable::HashTable()
 {
@@ -27,11 +19,9 @@ HashTable::HashTable()
 }
 
 //-------------------------------- Destructor --------------------------------
-// --Default Constructor:
-// --Param: N/A
-// --Post-condition:
-//      --Deallocates memory by deleating any existing pointers and setting
-//        all table values to nullptr
+// Description: This is the destructor which Deallocates memory by deleating 
+//              any existing pointers and setting all table values to nullptr
+// Post-condition: the hash table is empty
 //----------------------------------------------------------------------------
 HashTable::~HashTable()
 {
@@ -49,15 +39,14 @@ HashTable::~HashTable()
 }
 
 //---------------------------- addCustomerToHash -----------------------------
-// --Function: addCustomertoDatabase
-// --Param:
-//      --The newCustomer to be added has non-empty strings and a customer ID >= 0
-// --Post-condition:
-//      --The customer is added to the Hash table at the location
-//        [iSquared + ID % Rows][iSquared + ID % COLUMNS]
-//        where I= the number of 'hit' in the table
-//        and ROWS and COLUMNS are the prime numbers 101 and 199
-//        respectively, generating space for 20099 possible ID's
+// Description: This function add a customer object to the hash table.
+// Pre-condition: The new customer to be added has non-empty strings and a customer ID >= 0
+// Post-condition: The customer is added to the Hash table at the location
+//                 [iSquared + ID % Rows][iSquared + ID % COLUMNS]
+//                 where i = the number of 'hit' in the table
+//                 and ROWS and COLUMNS are the prime numbers 101 and 199
+//                 respectively, generating space for 20099 possible ID's.
+//                 Return true if added, otherwise return false.
 //----------------------------------------------------------------------------
 
 bool HashTable::addCustomer(Customer* customer)
@@ -101,12 +90,11 @@ bool HashTable::addCustomer(Customer* customer)
 }
 
 //------------------------------ removeCustomer ------------------------------
-// --Function: removeCustomer
-// --Param:
-//      --existingID is the ID of the customer to be removed
-// --Post-condition:
-//      --If the customer exists in the table A pointer to the customer is
-//        returned. If the customer does not exist then nullptr is returned.
+// Description: This is the function which will remove a customer object from
+//              the hash table.
+// Post-condition: If the customer exists in the table, a pointer to the customer is
+//                 returned. 
+//                 If the customer does not exist then nullptr is returned.
 //----------------------------------------------------------------------------
 bool HashTable::removeCustomer(const int& ID)
 {
@@ -143,12 +131,10 @@ bool HashTable::removeCustomer(const int& ID)
 }
 
 //-------------------------- retrieveCustomer --------------------------------
-// --Function: retrieveCustomer
-// --Param:
-//      --Existing ID is the ID of the customer to be retrieved
-// --Post-condition:
-//      --If the customer exists in the table A pointer to the customer is
-//        returned. If the customer does not exist then nullptr is returned.
+// Description: This function retrieves a customer info.
+// Post-condition: If the customer exists in the table, a pointer to the customer is
+//                 returned. 
+//                 If the customer does not exist then nullptr is returned.
 //----------------------------------------------------------------------------
 Customer* HashTable::retrieveCustomer(const int& ID)const
 {
@@ -163,7 +149,7 @@ Customer* HashTable::retrieveCustomer(const int& ID)const
         temp = customerTable[(iSquared + ID) % ROWS][(iSquared + ID) % COLUMNS];
         
         
-        /*    int currentID = temp->getIDNum();*/
+        /*    int currentID = temp->getID();*/
         
         if (temp != nullptr && temp->getID() == ID)
         { //if ID's Match then we are done
