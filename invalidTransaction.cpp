@@ -1,24 +1,19 @@
-//
-//  invalidTransaction.cpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/13/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
-
 #include "invalidTransaction.h"
 
+//------------------------------- Constructor --------------------------------
+// Description: This is the default constructor.
+// Post-condition: Print out invalid transaction to the output screen.
+//----------------------------------------------------------------------------
 InvalidTransaction::InvalidTransaction(const string& command)
 {
     if (command != "")
     {
         newError = "ERROR:   " + command + " is an invalid transaction";
     }
-    
 }
 
 //---------------------------- Destructor ------------------------------------
-//
+// Description: This is the destructor
 //----------------------------------------------------------------------------
 InvalidTransaction::~InvalidTransaction()
 {
