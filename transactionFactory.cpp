@@ -1,13 +1,32 @@
-//
-//  transactionFactory.cpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/9/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
+// ------------------------------------------------ transactionFactory.cpp ---------------------------------------------
 
+// Name: Uyen Hoang, Max Nguyen
+// CSS 343 Section C
+
+// Creation Date: 3/9/2020
+
+// Date of Last Modification: 3/14/2020
+
+// --------------------------------------------------------------------------------------------------------------------
+
+// This program is the implementation file (.cpp) that creates a class TransactionFactory to determine
+// the type of transaction to be executed
+
+// -------------------------------------------------------------------------------------------------------------------- 
 #include "transactionFactory.h"
 
+// ----------------------------------- constructor ---------------------------------------------- 
+
+// Description
+
+// constructor: Processes the transactions. Validate if transactionType, ID, and movieType are valid. 
+//              If they are valid, continue processing according to its transactionType. 
+//              If not, print out the error messages.
+
+// preconditions: transaction
+// postconditions: continue processing according to the appropriate transactionType
+
+// ----------------------------------------------------------------------------------------------------- 
 TransactionFactory::TransactionFactory(const string& command, CustomerManager& customers, InventoryManager& inventory) {
     //Initializing temp variables
     Transaction* newTransaction = nullptr;
@@ -30,7 +49,7 @@ TransactionFactory::TransactionFactory(const string& command, CustomerManager& c
         }
         
     }
-    //string transactionError = "";
+    
     
     switch (transactionType)
     {
@@ -63,7 +82,7 @@ TransactionFactory::TransactionFactory(const string& command, CustomerManager& c
 }
 
 //---------------------------------- getErrors ------------------------------
-// --Returns a string of erros
+// --Returns a string of errors
 //---------------------------------------------------------------------------
 string TransactionFactory::getErrors() const
 {
