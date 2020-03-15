@@ -1,10 +1,3 @@
-//
-//  drama.hpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #ifndef drama_h
 #define drama_h
@@ -15,14 +8,7 @@
 #include <fstream>
 using namespace std;
 //---------------------------- class Drama ----------------------------------
-// Purpose:
-//   -- Child class of Movie. Dramma Movie sorts
-//      by director and title.
-//
-// Implementation and assumptions:
-//   -- Implement as a child class of Movie
-//   -- Implement with following futures:
-//      createMovieInfo, createCustomerHistory, ==, !=, >, <
+// Purpose: Child class of Movie. Dramma Movie sorts by director and title.
 //---------------------------------------------------------------------------
 class Drama : public Movie
 {
