@@ -1,11 +1,3 @@
-//
-//  storeManager.hpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/13/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
-
 #ifndef storeManager_h
 #define storeManager_h
 
@@ -19,26 +11,20 @@
 #include "transactionManager.h"
 
 //--------------------------  class StoreManager ----------------------------
-// Purpose:
-//   -- Store Manager class: high level manager for other manager
-//      classes such as: CustomerManager, InventoryManager, ComandLoaderManager.
-//
-// Implementation and assumptions:
-//   -- Implement as a manager class
-//   -- Implement with following futures:
-//      buildStore, readCommands
+// Purpose: This class is a high level manager class for other manager
+//      classes such as: CustomerManager, InventoryManager, and TransactionManager.
 //---------------------------------------------------------------------------
 class StoreManager
 {
 public:
     
-    void buildStore(ifstream&, ifstream&);               // build store by creating movie and customer base
-    void readCommands(ifstream&);                      // proccess commands lines
+    void buildStore(ifstream&, ifstream&);              // build store by creating movie and customer database
+    void readCommands(ifstream&);                      // proccess command lines
     
 private:
-    CustomerManager allCustomers;                     // Customer manager object
-    InventoryManager allInventory;                   // Inventroy manager object
-    TransactionManager allTransactions;                         // comands  manager object
+    CustomerManager allCustomers;                     // CustomerManager object
+    InventoryManager allInventory;                   // InventoryManager object
+    TransactionManager allTransactions;               //TransactionManager object
 };
 
 #endif /* storeManager_h */
