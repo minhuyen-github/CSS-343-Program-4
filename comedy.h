@@ -1,10 +1,3 @@
-//
-//  comedy.hpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #ifndef comedy_h
 #define comedy_h
@@ -13,14 +6,7 @@
 #include "movie.h"
 using namespace std;
 //---------------------------- Class Comedy --------------------------------
-// Purpose:
-//   -- Child class of Movie. Comedy Movie sorts by
-//      title and year.
-//
-// Implementation and assumptions:
-//   -- Implement as a child class of Movie.
-//   -- Implement with following futures:
-//      createMovieInfo, createCustomerHistory, ==, !=, >, <
+// Purpose: Child class of Movie. Comedy Movie sorts by title and year.
 //---------------------------------------------------------------------------
 class Comedy : public Movie
 {
