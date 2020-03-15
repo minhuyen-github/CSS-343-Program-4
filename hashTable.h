@@ -1,10 +1,3 @@
-//
-//  hashTable.hpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #ifndef hashTable_h
 #define hashTable_h
@@ -16,7 +9,13 @@ using namespace std;
 int const ROWS = 101;
 int const COLUMNS = 199;
 
-// This is a chain hash table
+//-------------------------- HashTable --------------------------------
+// Purpose: This class is built to safely store up to 10,000 customer ID's
+//	        in a 101 x 199 two - dimentional matrix, or table. 
+// Note: The algorithm determines the ID location by placing the customer in 
+//       the table location:[(ID + i ^ 2) % 101][(ID + i ^ 2) % 199] where
+//	     i is the number of tries to place the ID in the table
+//--------------------------------------------------------------------------
 class HashTable
 {
 public:
