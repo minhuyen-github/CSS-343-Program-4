@@ -27,9 +27,9 @@ public:
     virtual bool increaseStock();    // increase stock
     virtual bool decreaseStock();       // decrease stock
     virtual int getStock();             // return current stock
-    virtual bool operator==(const Movie* rhs) const = 0; // pure virtual isEqual operator
-    virtual bool operator!=(const Movie* rhs) const = 0;
-    virtual bool operator>(const Movie* rhs) const = 0;
+    virtual bool operator==(const Movie* rhs) const = 0; // check if they are equal
+    virtual bool operator!=(const Movie* rhs) const = 0; // check if they are not equal
+    virtual bool operator>(const Movie* rhs) const = 0; 
     virtual bool operator<(const Movie* rhs) const = 0;
     
 protected:
@@ -37,7 +37,7 @@ protected:
     Movie();    // constructor (protected) to avoid declaration of the object
     void parseAndLoadString(const string& movieInfo);     // helper method for copy constractor
     
-    char genre;                          // hold type
+    char genre;                          // hold genre
     int stock;                          // hold stock
     string director;                    // hold director
     string title;                       // hold title
