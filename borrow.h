@@ -1,11 +1,17 @@
-//
-//  borrow.hpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
+// ------------------------------------------------ borrow.h -------------------------------------------------------
 
+// Name: Uyen Hoang, Max Nguyen
+// CSS 343 Section C
+
+// Creation Date: 3/9/2020
+
+// Date of Last Modification: 3/14/2020
+
+// --------------------------------------------------------------------------------------------------------------------
+
+// This program is the header file (.h) that process transaction borrow
+
+// -------------------------------------------------------------------------------------------------------------------- 
 #ifndef borrow_h
 #define borrow_h
 
