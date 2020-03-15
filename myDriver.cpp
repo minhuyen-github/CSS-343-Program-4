@@ -1,11 +1,18 @@
-//
-//  myDriver.cpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/13/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
+// ------------------------------------------------ myDriver.cpp -------------------------------------------------------
 
+// Name: Uyen Hoang, Max Nguyen
+// CSS 343 Section C
+
+// Creation Date: 3/9/2020
+
+// Date of Last Modification: 3/14/2020
+
+// --------------------------------------------------------------------------------------------------------------------
+
+// This program is the implementation file (.cpp) that contains the main function to run the whole program.
+// Main function reads 3 data textfiles, then process all movies, customes, and commands.
+
+// -------------------------------------------------------------------------------------------------------------------- 
 #include <stdio.h>
 #include "storeManager.h"
 #include <iostream>
@@ -14,18 +21,22 @@ using namespace std;
 
 int main()
 {
-    ifstream infile1("/Users/minhuyen/Downloads/CSS 343/CSS 343/Program 4/datafiles/data4movies.txt");
+    // Read movie data file
+    ifstream infile1("data4movies.txt");
     if (!infile1) {
         cout << "File could not be opened." << endl;
         return 1;
     }
-    ifstream infile2("/Users/minhuyen/Downloads/CSS 343/CSS 343/Program 4/datafiles/data4commands.txt");
+    
+    // Read command data file
+    ifstream infile2("data4commands.txt");
     if (!infile2) {
         cout << "File could not be opened." << endl;
         return 1;
     }
     
-    ifstream infile3("/Users/minhuyen/Downloads/CSS 343/CSS 343/Program 4/datafiles/data4customers.txt");
+    // Read customer data file
+    ifstream infile3("data4customers.txt");
     if (!infile3) {
         cout << "File could not be opened." << endl;
         return 1;
@@ -33,8 +44,9 @@ int main()
     
     StoreManager store;                   // allocate store
     store.buildStore(infile1, infile3);   // proccess movies and customers
-    store.readCommands(infile2);        // proccess commanads
+    store.readCommands(infile2);        // proccess commands
     
+    // Close the 3 files
     infile1.close();
     infile2.close();
     infile3.close();
