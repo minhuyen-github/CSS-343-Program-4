@@ -1,14 +1,10 @@
-//
-//  borrow.cpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #include "borrow.h"
 
 // -------------------------- Constructor -------------------------------------
+// Description: This is the constructor which takes in the command line to perform
+//              borrow action.
+//------------------------------------------------------------------------------
 Borrow::Borrow(const string& comm, CustomerManager& theManagers, InventoryManager& inventory)
 {
     char code;
@@ -72,7 +68,7 @@ Borrow::Borrow(const string& comm, CustomerManager& theManagers, InventoryManage
 }
 
 // ---------------------------- Destructor ------------------------------------
-//
+// Description: This is the destructor
 //-----------------------------------------------------------------------------
 Borrow::~Borrow()
 {
