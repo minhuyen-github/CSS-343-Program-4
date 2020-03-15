@@ -1,26 +1,14 @@
-//
-//  comedy.cpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #include "comedy.h"
 //---------------------------- class Comedy --------------------------------
-// Purpose:
-//   -- Child class of Movie. Comedy Movie sorts by
-//      title and year.
-//
-// Implementation and assumptions:
-//   -- Implement as a child class of Movie.
-//   -- Implement with following futures:
-//      createMovieInfo, createCustomerHistory, ==, !=, >, <
+// Purpose: Child class of Movie. Comedy Movie sorts by title and year.
 //---------------------------------------------------------------------------
 
 #include "comedy.h"
 //------------------------ Constructor ----------------------------------------
-// --Uses helper function parseAndLoadString.
+// Description: This is the constructor which will use the parseAndLoadString method 
+//              to create a comedy movie.
+// Post-condition: A comedy movie object is created
 //-----------------------------------------------------------------------------
 Comedy::Comedy(const string& movie)
 {
@@ -28,7 +16,7 @@ Comedy::Comedy(const string& movie)
 }
 
 //----------------------- Constructor ----------------------------------------
-//
+// Description: This is the constructor which will set the movie's title and director.
 //----------------------------------------------------------------------------
 Comedy::Comedy(const string& title, const int& year)
 {
@@ -37,7 +25,7 @@ Comedy::Comedy(const string& title, const int& year)
 }
 
 //------------------------- Destructor ----------------------------------------
-//
+// Description: This is the destructor
 //-----------------------------------------------------------------------------
 Comedy::~Comedy()
 {
@@ -45,9 +33,9 @@ Comedy::~Comedy()
 }
 
 //------------------------ operator== ----------------------------------------
-// --Compares current object Movie with other object Movie.
-// --Returns true if title and year are the same
-//   else returns false.
+// Description: This function compares current object Movie with other object Movie.
+// Post-condition: Returns true if title and year are the same
+//                 Else returns false.
 //----------------------------------------------------------------------------
 bool Comedy::operator==(const Movie* movie) const
 {
@@ -56,9 +44,9 @@ bool Comedy::operator==(const Movie* movie) const
 }
 
 //------------------------ operator!= ----------------------------------------
-// --Compares current object Movie with other object Movie.
-// --Returns true if title or year are not the same
-//   else returns false.
+// Description: This function compares current object Movie with other object Movie.
+// Post-condition: Returns true if title or year are not the same
+//                 Else returns false.
 //----------------------------------------------------------------------------
 bool Comedy::operator!=(const Movie * movie) const
 {
@@ -66,10 +54,10 @@ bool Comedy::operator!=(const Movie * movie) const
 }
 
 //------------------------ operator> -----------------------------------------
-// --Compares current object Movie with other object Movie.
-// --Returns true if title is greater.
-// --If title is the same, then checks year and returns true if greater.
-// --Else returns false
+// Description: This function compares current object Movie with other object Movie.
+// Post-condition: Returns true if title is greater.
+//                 If title is the same, then checks year and returns true if greater.
+//                 Else returns false
 //----------------------------------------------------------------------------
 bool Comedy::operator>(const Movie * movie) const
 {
@@ -78,17 +66,18 @@ bool Comedy::operator>(const Movie * movie) const
 }
 
 //------------------------ operator< -----------------------------------------
-// --Compares current object Movie with other object Movie.
-// --Returns true if (this) does not equal rhs and is not greater than rhs
-//   else it returns false.
+// Description: This function compares current object Movie with other object Movie.
+// Post-condition: Returns true if (this) does not equal rhs and is not greater than rhs
+//                 Else it returns false.
 //----------------------------------------------------------------------------
 bool Comedy::operator<(const Movie * movie) const
 {
     return ((this != movie) && !(this > movie));
 }
 
-//----------------------------- createMovieInfo ------------------------------
-// --Creates a formated string with all the movie info for output to console.
+//----------------------------- createMovie ------------------------------
+// Description: This function creates a formated string with all the movie info to console.
+// Post-condition: A string represents a movie info
 //----------------------------------------------------------------------------
 string Comedy::createMovie() const
 {
@@ -100,8 +89,9 @@ string Comedy::createMovie() const
     return movieInfo.str();
 }
 
-//----------------------------- createCustomerHistory ------------------------
-// --Creates a formated string with all the movie info for customer history.
+//----------------------------- createHistory ------------------------
+// Description: This function creates a formated string with all the movie info for customer history.
+// Post-condition: a formated string with all the movie info for customer history.
 //----------------------------------------------------------------------------
 string Comedy::createHistory() const
 {
