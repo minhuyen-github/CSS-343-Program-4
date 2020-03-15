@@ -1,21 +1,24 @@
-//
-//  transaction.hpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
+// ------------------------------------------------ transaction.h -------------------------------------------------------
 
+// Name: Uyen Hoang, Max Nguyen
+// CSS 343 Section C
+
+// Creation Date: 3/9/2020
+
+// Date of Last Modification: 3/14/2020
+
+// --------------------------------------------------------------------------------------------------------------------
+
+// This program is the header file (.h) that implements the parent class for all transactions
+
+// -------------------------------------------------------------------------------------------------------------------- 
 #ifndef transaction_h
 #define transaction_h
 
 #include "customerManager.h"
 #include "inventoryManager.h"
 
-//-------------------------------- class Transaction ------------------------
-// Purpose: This is the parent class for all transactions
-//---------------------------------------------------------------------------
-
+//-------------------------------- class Transaction ------------------------------------------------------
 class Transaction
 {
 public:
