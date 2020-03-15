@@ -1,10 +1,4 @@
-//
-//  show.hpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
+
 
 #ifndef return_h
 #define return_h
@@ -14,6 +8,10 @@
 
 using namespace std;
 
+//------------------------------ Return -------------------------------------------
+// Purpose: This is a class to return movies.
+// Notes: This class inherits from Transaction class
+//---------------------------------------------------------------------------
 class Return : public Transaction
 {
 public:
