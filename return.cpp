@@ -1,14 +1,12 @@
-//
-//  show.cpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #include "return.h"
 
 //------------------------------- Constructor --------------------------------
+// Description: This is the constructor. It will take in the command, the customer
+//              object, and the inventory object to perform return action.
+// Post-condition: the customer's history is updated. Any detected errors are printed
+//                  out to the screen.
+// 
 Return::Return(const string& command, CustomerManager& customers, InventoryManager& inventory)
 {
     stringstream ss;
@@ -66,7 +64,7 @@ Return::Return(const string& command, CustomerManager& customers, InventoryManag
 }
 
 //------------------------------ Destructor ----------------------------------
-//
+// Description: This is the destructor
 //----------------------------------------------------------------------------
 Return::~Return()
 {
