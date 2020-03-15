@@ -1,20 +1,10 @@
-//
-//  movieFactory.cpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/9/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #include "movieFactory.h"
 
-//--------------------------  class MovieFactory ----------------------------
-// Purpose: This class uses factory method pattern to create new moive from input string.
-//
-//---------------------------------------------------------------------------
-
 //----------------------------- createMovie ---------------------------------
-// Description: Creates a new movie based on genre using factory method
+// Description: This function creates a new movie object based on the command line.
+// Post-condition: Returns a pointer to the newly created movie object.
+//                 If there is no object created, return nullptr
 //---------------------------------------------------------------------------
 Movie* MovieFactory::createMovie(const string& command)
 {
