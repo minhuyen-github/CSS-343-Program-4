@@ -1,17 +1,10 @@
-//
-//  nodedata.cpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
-
 #include "inventoryManager.h"
 
 
 //-------------------------- processInventory ----------------------------------
-// --Process inventory commands from file (infile).
-// --Uses factory method (MovieFactory) to create pointer object to Movie.
+// Description: This function process inventory commands from the given file.
+//              It also uses method from class MovieFactory to create a pointer
+//              object to Movie.
 //------------------------------------------------------------------------------
 void InventoryManager::processInventory(ifstream& infile)
 {
@@ -43,69 +36,71 @@ void InventoryManager::processInventory(ifstream& infile)
     displayErrors(); // display errors
 }
 
-//--------------------------- retireveMovie ------------------------------------
-// --Retrieves movie from appropriate BinTree.
+//--------------------------- retrieveveMovie ------------------------------------
+// Description: This function retrieves movie from appropriate BSTree.
+// Post-condition: Return a pointer to the correct Movie object.
 //------------------------------------------------------------------------------
 Movie* InventoryManager::retrieveMovie(const string& info)
 {
-    char genre;
+    char genre;                 // store movie's genre
     stringstream ss;            // string reader
-    ss << info;                    // load with info
+    ss << info;                 // get movie's info
     ss >> genre;                // get genre
-    Movie* movieData = nullptr;            // make temp pointer
+    Movie* movieData = nullptr;            // make a pointer
     
-    string dummyString1, dummyString2;    // dummy string for getting retreival info
-    int dummyInt1, dummyInt2;            // dummy ints for getting retreval info
+    string dummyString1, dummyString2;    // dummy string variables to store retrieval info
+    int dummyInt1, dummyInt2;            // dummy integer variable to store retrieval info
     
-    string send; //temp string for creating movies
+    string send; //temp string to create movies
     
     switch (genre)
     {
         case 'D':                                                            // If Drama
-            getline(ss, dummyString1, ',');                                    // Get Director
-            dummyString2 = (ss.str().substr(ss.tellg()));                    // Get Title
+            getline(ss, dummyString1, ',');                                    // get Director
+            dummyString2 = (ss.str().substr(ss.tellg()));                    // get Title
             send = "D , 0," + dummyString1 + "," + dummyString2 + " 2000";  // load send string
             
             movieData = MovieFactory::createMovie(send);        // Create temp movie
-            return dramaBST.retrieve(movieData);                // Look for movie in inventory
+            return dramaBST.retrieve(movieData);                // Look for movie in its BSTree
             break;
             
         case 'F':                                                            // If Comedy
-            getline(ss, dummyString1, ',');                                 // Title
-            ss >> dummyInt1;                                                // Get Year
+            getline(ss, dummyString1, ',');                                 // get Title
+            ss >> dummyInt1;                                                // get Year
             send = "F, 0, Director," + dummyString1 + "," + to_string(dummyInt1);
             
             movieData = MovieFactory::createMovie(send);        // create temp movie
-            return comedyBST.retrieve(movieData);                // Look for movie in inventory
+            return comedyBST.retrieve(movieData);                // Look for movie in its BSTree
             break;
             
         case 'C':                                                         // If Classic
-            ss >> dummyInt1 >> dummyInt2;                                    // Get Month and Year
-            dummyString1 = (ss.str().substr(ss.tellg()));                    // Get Major Actor
+            ss >> dummyInt1 >> dummyInt2;                                    // get Month and Year
+            dummyString1 = (ss.str().substr(ss.tellg()));                    // get Major Actor
             send = "C, 0, Director, title," + dummyString1 + " " + to_string(dummyInt1) + " " + to_string(dummyInt2);
             
             movieData = MovieFactory::createMovie(send);        // create temp movie
-            return classicsBST.retrieve(movieData);                // Look for movie in inventory
+            return classicsBST.retrieve(movieData);                // Look for movie in its BSTree
             break;
             
             
-        default:    //Invalid Genre Code
+        default:    //Invalid genre code
             return movieData;
             break;
     }
     
 }
-//----------------------------- classicRetrieve --------------------------------
-// --Used only when the store needs to retrieve a Classic movie that is the same
-//   title, month, and year, but not the same major Actor
+//----------------------------- retrieveClassicMovie --------------------------------
+// Description: This function retrieve a Classic movie that is the same title, month,
+//              and year, but not the same major actor.
+// Post-condition: Return a pointer to the correct classic movie object.
 //------------------------------------------------------------------------------
 Movie* InventoryManager::retrieveClassicMovie(Movie* ptr)
 {
     return classicsBST.retrieveClassicMovie(ptr);
 }
 
-//-------------------------- displayAll ----------------------------------------
-// --Displays all BinTrees (e.g. Comedies, Dramas, Classics).
+//-------------------------- display ----------------------------------------
+// Description: This function displays all BSTrees (e.g. Comedies, Dramas, Classics).
 //------------------------------------------------------------------------------
 void InventoryManager::display()const
 {
@@ -134,7 +129,8 @@ void InventoryManager::display()const
 }
 
 //-------------------------- addError ------------------------------------------
-// --Collects errors that have been detected while attempting to create movie(s).
+// Descripiton: This function collects errors that have been detected while
+//              attempting to create Movie objects.
 //------------------------------------------------------------------------------
 void InventoryManager::addError(const string& error)
 {
@@ -144,7 +140,8 @@ void InventoryManager::addError(const string& error)
 }
 
 //-------------------------- displayError --------------------------------------
-// --Displays all errors found while attempting to create movie(s).
+// Description: This function displays all errors that have been detected while
+//              attempting to create Movie objects.
 //------------------------------------------------------------------------------
 void InventoryManager::displayErrors() const
 {
