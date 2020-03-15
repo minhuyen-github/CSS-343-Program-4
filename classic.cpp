@@ -1,32 +1,9 @@
-//
-//  classic.cpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #include "classic.h"
 #include <sstream>
-//--------------------------  class Classics --------------------------------
-// Purpose:
-//   -- child class of Movie. Classical movie has extra info:
-//      month and majorActor. Also, classical movie sort by majoractor, month,
-//      and year.
-//
-// Implementation and assumptions:
-//   -- Implement as a child class of Movie
-//   -- Implement with following futures:
-//      createMovieInfo, createCustomerHistory,
-//        ==, !=, >, <, and isEqual
-//   -- Assumption: each Classics movie that has same director, same
-//      title, same year and month, but has different Major will be
-//      considirate as a different Classic movie.
-//----------------------------------------------------------------------------
-
 
 //------------------------------ Destructor ----------------------------------
-//
+// Description: This is the destructor
 //----------------------------------------------------------------------------
 Classics::~Classics()
 {
@@ -34,7 +11,7 @@ Classics::~Classics()
 }
 
 //----------------------- Constructor ----------------------------------------
-// --Constructor
+// Description: This is the constructor which sets the movie's actor, month and year.
 //----------------------------------------------------------------------------
 Classics::Classics(const string& actor, const int& month, const int& year)
 {
@@ -44,18 +21,16 @@ Classics::Classics(const string& actor, const int& month, const int& year)
 }
 
 //------------------------ Constructor ---------------------------------------
-// --Constructor
-// --Uses helper method parseNLoadString()
+// Description: This is the constructor which calls parseAndLoadString method
 //----------------------------------------------------------------------------
 Classics::Classics(const string& movie)
 {
     parseAndLoadString(movie);
 }
 
-//------------------------- parseNloadString ---------------------------------
-// --Helper method for constractor.
-// --Parses the string into a smaller pieces. From these pieces
-//   assign inforamtion to a current movie.
+//------------------------- parseAndloadString ---------------------------------
+// Description: This is the helper method for constructor. It parses the string 
+//              into a smaller pieces. From these pieces, it assigns infor to a current movie.
 //----------------------------------------------------------------------------
 void Classics::parseAndLoadString(const string& movie)
 {
@@ -81,8 +56,9 @@ void Classics::parseAndLoadString(const string& movie)
 }
 
 
-//------------------------------ createMovieInfo -----------------------------
-// --Creates a formated string with all the movie info for output to console
+//------------------------------ createMovie -----------------------------
+// Description: This function creates a formatted string with all the movie info to console.
+// Post-condition: A formatted string with all the movie info to console.
 //----------------------------------------------------------------------------
 string Classics::createMovie() const
 {
@@ -95,8 +71,9 @@ string Classics::createMovie() const
     return  movieInfo.str();
 }
 
-//------------------------------ createCustomerHistory -----------------------
-// --Creates a formated string with all the movie info for customer history
+//------------------------------ createHistory -----------------------
+// Description: This function creates a formated string with all the movie info for customer history.
+// Post-condition: A formated string with all the movie info for customer history.
 //----------------------------------------------------------------------------
 string Classics::createHistory() const
 {
@@ -109,9 +86,10 @@ string Classics::createHistory() const
 
 
 //--------------------------------- isEqual ----------------------------------
-// --Only used in BinTree if a customer is trying to borrow a Classic and the
-//   stock is zero. Will then try and find alternate Classic that has same
-//   title, month, and year, but not same major actor.
+// Description: This function is only used in BinTree if a customer is trying to borrow a Classic and the
+//              stock is zero. It will then try to find an alternative Classic that has same
+//              title, month, and year, but not the same major actor.
+// Post-condition: Return true if an alternate is found, otherwise, return false
 //----------------------------------------------------------------------------
 bool Classics::isEqual(const Movie* movie) const
 {
@@ -121,9 +99,9 @@ bool Classics::isEqual(const Movie* movie) const
 
 
 //------------------------ operator== ---------------------------------------
-// --Compares current object Movie with other object Movie.
-// --Returns true if majorActor, year, and month are the same
-//   else returns false.
+// Description: This function compares current object Movie with other object Movie.
+// Post-condition: Returns true if major actor, year, and month are the same
+//                 Else returns false.
 //----------------------------------------------------------------------------
 bool Classics::operator==(const Movie * movie) const
 {
@@ -132,12 +110,10 @@ bool Classics::operator==(const Movie * movie) const
     
 }
 
-
-
 //------------------------ operator!= ---------------------------------------
-// --Compares current object Movie with other object Movie.
-// --Returns true if majorActor, year, or month are not the same
-//   else returns false.
+// Description: This function compares current object Movie with other object Movie.
+// Post-condition: Returns true if major actor, year, or month are not the same
+//                 Else returns false.
 //----------------------------------------------------------------------------
 bool Classics::operator!=(const Movie * movie) const
 {
@@ -145,12 +121,12 @@ bool Classics::operator!=(const Movie * movie) const
 }
 
 //------------------------ operator> ----------------------------------------
-// --Compares current object Movie with other object Movie.
-// --Returns true if year is greater.
-// --If year is the same, then checks month and returns true if greater.
-// --If year and month are the same, then checks majorActor and returns true
-//   if greater.
-// --Else returns false.
+// Description: This function compares current object Movie with other object Movie.
+// Post-condition: Returns true if year is greater.
+//                 If year is the same, then checks month and returns true if greater.
+//                 If year and month are the same, then checks majorActor and returns true
+//                 if greater.
+//                 Else returns false.
 //----------------------------------------------------------------------------
 bool Classics::operator>(const Movie * movie) const
 {
@@ -161,9 +137,9 @@ bool Classics::operator>(const Movie * movie) const
 }
 
 //------------------------ operator< ----------------------------------------
-// --Compares current object Movie with other object Movie.
-// --Returns true if (this) does not equal rhs and is not greater than rhs
-//   else it returns false.
+// Description: This function compares current object Movie with other object Movie.
+// Post-condition: Returns true if (this) does not equal rhs and is not greater than rhs
+//                 Else it returns false.
 //----------------------------------------------------------------------------
 bool Classics::operator<(const Movie * movie) const
 {
