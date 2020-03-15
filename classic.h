@@ -1,10 +1,3 @@
-//
-//  classic.hpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/5/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #ifndef classic_h
 #define classic_h
@@ -14,19 +7,12 @@
 #include "movie.h"
 using namespace std;
 //--------------------------  class Classics --------------------------------
-// Purpose:
-//   -- child class of Movie. Classical movie has extra info:
-//      month and majorActor. Also, classical movie sort by majoractor, month,
+// Purpose: child class of Movie. Classical movie has extra info:
+//      month and major actor. Also, classic movie sort by major actor, month,
 //      and year.
-//
-// Implementation and assumptions:
-//   -- Implement as a child class of Movie
-//   -- Implement with following futures:
-//      createMovieInfo, createCustomerHistory,
-//        ==, !=, >, <, and isEqual
-//   -- Assumption: each Classics movie that has same director, same
-//      title, same year and month, but has different Major will be
-//      considirate as a different Classic movie.
+// Assumption: each classic movie that has same director, same
+//      title, same year and month, but has different major actor will be
+//      consider as a different classic movie.
 //----------------------------------------------------------------------------
 class Classics : public Movie
 {
