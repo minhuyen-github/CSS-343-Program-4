@@ -1,10 +1,3 @@
-//
-//  movieFactory.hpp
-//  Program 4
-//
-//  Created by Uyen Minh Hoang on 3/9/20.
-//  Copyright © 2020 Uyen Minh Hoang. All rights reserved.
-//
 
 #ifndef movieFactory_h
 #define movieFactory_h
@@ -19,6 +12,9 @@
 #include <fstream>
 using namespace std;
 
+//--------------------------  class MovieFactory ----------------------------
+// Purpose: This class creates new movie from input string.
+//---------------------------------------------------------------------------
 class MovieFactory {
 
 public:
